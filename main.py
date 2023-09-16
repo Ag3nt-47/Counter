@@ -1,13 +1,13 @@
-from plyer import notification
+from time import sleep
 
-notification_title = "Merhaba bu test başlığıdır."
-notification_description = "Hmm bunu okuduğuna göre demekki kod çalışıyor.. niceee"
+sayı = input("Süreyi verin (saniye cinsinden): ")
 
-while True:
-    notification.notify(
-        title = notification_title,
-        message = notification_description,
-        app_icon = None,
-        timeout = 0.4,
-        toast = False
-    )
+try:
+    sayı = int(sayı)
+    while sayı > 0:
+        print(f"{sayı} saniye kaldı")
+        sayı -= 1
+        sleep(1)
+    print("\nSüre doldu")
+except:
+    print("Hata, sayı yazdığınızdan emin olun.")
